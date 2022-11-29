@@ -64,7 +64,7 @@ function isEven(number) {
 let oddOrEven;
 do {
     oddOrEven = prompt('Scegli: pari o dispari?');
-} while (oddOrEven !== 'pari' || oddOrEven !== 'dispari');
+} while ((oddOrEven !== 'pari') && (oddOrEven !== 'dispari'));
 
 let userNumber;
 
@@ -74,7 +74,6 @@ do {
 
 const pcNumber = getRandomNumber(1,5);
 
-
 const userPcSum = getSum(userNumber, pcNumber);
 
 if (isEven(userPcSum) === oddOrEven || !isEven(userPcSum) === oddOrEven) {
@@ -83,8 +82,9 @@ if (isEven(userPcSum) === oddOrEven || !isEven(userPcSum) === oddOrEven) {
     console.log('Mi dispiace hai perso!');
 }
 
+console.warn (`Tu hai scelto -> ${oddOrEven}`);
 
-console.log(`${userNumber} <- questo è il numero dell'utente`);
+console.log(`${userNumber} <- questo è il numero che hai inserito`);
 
 console.log(`${pcNumber} <- questo è il numero generato casualmente per il computer`);
 
