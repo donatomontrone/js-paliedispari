@@ -22,8 +22,9 @@ function isPalindrome(string) {
 // Fare un prompt per chiedere all'utente una parola
 const string = prompt('Inserisci una parola per scoprire se è palindroma');
 
-// assegnare la funziona ad una variabile
+//Dichiaro una variabile e le assegno la funzione
 const palindrome = isPalindrome(string);
+// Se la parola è palindroma (true) altrimenti (false)
     if (palindrome) {
         alert('Questo è un palindromo');
         console.warn('Questo è un palindromo');
@@ -40,15 +41,55 @@ const palindrome = isPalindrome(string);
 //Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari attraverso un'altra funzione
 //Dichiariamo chi ha vinto.
 
-// function getRandomNumber(numMax, numMin) {
-//     const randomNumber = Math.floor(Math.random() * (numMax - numMin + 1)) + numMin;
-//     return randomNumber;
-// }
+//Funzione per un numero randomico.
+function getRandomNumber(numMax, numMin) {
+    const randomNumber = Math.floor(Math.random() * (numMax - numMin + 1)) + numMin;
+    return randomNumber;
+}
 
-// const oddOrEven = prompt('Scegli: pari o dispari?');
+// Funzione che somma due numeri
+function getSum(number1, number2) {
+    let sum = number1 + number2;
+    return sum;
+}
 
-// let userNumber;
+//Funzione per stabilire se un numero è pari
+function isEven(number) {
+    if (number % 2 === 0) {
+        return 'pari';
+    }
+    return 'dispari';
+}
 
-// do {
-//     userNumber = parseInt(prompt('Inserisci un numero tra 1 e 5'));
-// } while (((Number.isNaN(userNumber) || userNumber <1 || userNumber > 5)));
+let oddOrEven;
+do {
+    oddOrEven = prompt('Scegli: pari o dispari?');
+} while (oddOrEven !== 'pari' || oddOrEven !== 'dispari');
+
+let userNumber;
+
+do {
+    userNumber = parseInt(prompt('Inserisci un numero tra 1 e 5'));
+} while (((Number.isNaN(userNumber) || userNumber <1 || userNumber > 5)));
+
+const pcNumber = getRandomNumber(1,5);
+
+
+const userPcSum = getSum(userNumber, pcNumber);
+
+if (isEven(userPcSum) === oddOrEven || !isEven(userPcSum) === oddOrEven) {
+    console.log('Compliementi hai vinto!');
+} else {
+    console.log('Mi dispiace hai perso!');
+}
+
+
+console.log(`${userNumber} <- questo è il numero dell'utente`);
+
+console.log(`${pcNumber} <- questo è il numero generato casualmente per il computer`);
+
+console.log(`${userPcSum} <- Questa è la somma dei numeri`)
+
+
+
+
