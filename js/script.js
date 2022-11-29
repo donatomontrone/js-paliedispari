@@ -7,23 +7,23 @@
 function isPalindrome(string) {
 // trovare la lunghezza della stringa.
     const lunghezza = string.length;
+    let check = true;
 
 // creare un ciclo for attraverso metà stringa
     for (let index = 0; index < lunghezza / 2; index++) {
-
 // controllare se la prima lettera è uguale all'ultima lettera e così' via
         if (string[index] !== string[lunghezza - 1 - index]) {
-            return false;
+            check = false;
         }
     }
-    return true;
+    return check;
 }
 
 // Fare un prompt per chiedere all'utente una parola
-const string = prompt('Inserisci una parola per scoprire se è palindroma');
+const word = prompt('Inserisci una parola per scoprire se è palindroma');
 
 //Dichiaro una variabile e le assegno la funzione
-const palindrome = isPalindrome(string);
+const palindrome = isPalindrome(word);
 // Se la parola è palindroma (true) altrimenti (false)
     if (palindrome) {
         alert('Questo è un palindromo');
@@ -83,12 +83,9 @@ if (isEven(userPcSum) === oddOrEven || !isEven(userPcSum) === oddOrEven) {
 }
 
 console.warn (`Tu hai scelto -> ${oddOrEven}`);
-
 console.log(`${userNumber} <- questo è il numero che hai inserito`);
-
 console.log(`${pcNumber} <- questo è il numero generato casualmente per il computer`);
-
-console.log(`${userPcSum} <- Questa è la somma dei numeri`)
+console.log(`${userPcSum} <- Questa è la somma dei numeri`);
 
 
 
