@@ -12,7 +12,7 @@ function isPalindrome(string) {
 // creare un ciclo for attraverso metà stringa
     for (let index = 0; index < lunghezza / 2; index++) {
 // controllare se la prima lettera è uguale all'ultima lettera e così' via
-        if (string[index] !== string[lunghezza - 1 - index]) {
+        if (string[index].toLowerCase() !== string[lunghezza - 1 - index].toLowerCase()) {
             check = false;
         }
     }
@@ -63,20 +63,20 @@ function isEven(number) {
 
 let oddOrEven;
 do {
-    oddOrEven = prompt('Scegli: pari o dispari?');
+    oddOrEven = prompt('Scegli: pari o dispari?').toLowerCase().trim();
 } while ((oddOrEven !== 'pari') && (oddOrEven !== 'dispari'));
 
 let userNumber;
 
 do {
-    userNumber = parseInt(prompt('Inserisci un numero tra 1 e 5'));
-} while (((Number.isNaN(userNumber) || userNumber <1 || userNumber > 5)));
+    userNumber = parseInt(prompt('Inserisci un numero tra 1 e 5'), 10);
+} while (Number.isNaN(userNumber) || userNumber <1 || userNumber > 5);
 
 const pcNumber = getRandomNumber(1,5);
 
 const userPcSum = getSum(userNumber, pcNumber);
 
-if (isEven(userPcSum) === oddOrEven || !isEven(userPcSum) === oddOrEven) {
+if (isEven(userPcSum) === oddOrEven) {
     console.log('Compliementi hai vinto!');
 } else {
     console.log('Mi dispiace hai perso!');
